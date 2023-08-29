@@ -2,7 +2,7 @@ import os
 
 print("==========BIENVENIDO AL  SISTEMA============\n")
 
-print("===LISTA CURSOS==\n")
+print("===1. LISTA CURSOS==\n")
 n = int(input("Ingrese la cantidad de cursos que ingresará:  "))
 listaCursos = []
 
@@ -15,7 +15,7 @@ print("Los cursos agregados son: ")
 for i in listaCursos:
     print(i)
 
-print("===ALMACEN PERSONAS==\n")
+print("===2. ALMACEN PERSONAS==\n")
 
 n = int(input("Ingrese la cantidad de personas que ingresará:  "))
 personas = {}
@@ -30,7 +30,7 @@ src = personas.get(nperson)
 
 print(f"Su nombre es: {src}\n")
 
-print("===TUPLAS==\n")
+print("===4. TUPLAS==\n")
 
 datos = ()
 
@@ -49,14 +49,24 @@ print(type(cadena))
 print(type(coleccion))
 
 
-print("===DICCIONARIO==\n")
+print("===3. DICCIONARIO==\n")
 
-diccionario = {"Euro" : "E", "Dollar" : "$", "Yen": "Y"}
-valor = float(input("ingrese el valor a convertir: "))
-conver = int(input("Convertir a: Marque 1 para Euro, 2 para Dollar y 3 para Yen"))
+diccionario = {"Euro" : 4473.59, "Dolar" : 4110.43, "Yen": 28.18}
+conver = int(input("¿A qué moneda desea Convertir? Digite el número equivalente\n 1.Euro\n 2.Dolar \n 3.Yen \n >>>:  "))
+valor = float(input("ingrese el valor en pesos a convertir: "))
+
 
 if conver == 1:
-    total1 = valor * 4.096,17
-    print(f"Equivale a {total1} dolares")
+    total1 = valor / diccionario.get("Euro")
+    print(f"Equivale a {total1} Euros")
+elif conver == 2:
+    total2 = valor / diccionario.get("Dolar")
+    print(f"Equivale a {total2} Dólares")
+elif conver == 3:
+    total3 = valor / diccionario.get("Yen")
+    print(f"Equivale a {total3} Yenes")
+else:
+    print("La moneda que ingresó no se encuentra en el diccionario")
+
 
 
